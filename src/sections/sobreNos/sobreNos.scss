@@ -1,0 +1,142 @@
+.sn {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #ede7ff;
+    padding: 120px 8% 150px;
+    box-sizing: border-box;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(to bottom, rgba(248, 246, 255, 0) 0%, #fce8f6 100%);
+        pointer-events: none;
+    }
+
+    .sn-content {
+        margin-top: 5rem;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .sn-title {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            color: #2e1a5e;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg,
+                    #ff2d8b,
+                    #f8a000);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .sn-text {
+        max-width: 100%;
+        margin-bottom: 70px;
+        text-align: center;
+
+        p {
+            margin: 0;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.8;
+            color: #2e1a5e;
+        }
+
+        .gradient-text {
+            font-weight: 600;
+
+            background: linear-gradient(90deg,
+                    #ff2d8b,
+                    #f8a000);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .sn-cards {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .sn {
+        padding: 100px 7% 130px;
+
+        .sn-title {
+            h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+        }
+
+        .sn-text {
+            max-width: 100%;
+            margin-bottom: 60px;
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .sn-cards {
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .sn {
+        min-height: auto;
+        padding: 90px 7% 120px;
+
+        .sn-title {
+            margin-bottom: 25px;
+
+            h1 {
+                font-size: clamp(2.3rem, 11vw, 3.5rem);
+                letter-spacing: -1.5px;
+            }
+        }
+
+        .sn-text {
+            margin-bottom: 50px;
+
+            p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+        }
+
+        .sn-cards {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+    }
+}
