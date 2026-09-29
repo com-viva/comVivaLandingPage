@@ -1,0 +1,115 @@
+.eqp {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #fff6ed;
+    padding: 120px 8% 150px;
+    box-sizing: border-box;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(to bottom, rgba(248, 246, 255, 0) 0%, #fee5d4 100%);
+        pointer-events: none;
+    }
+
+    .eqp-content {
+        margin-top: 5rem;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .eqp-title {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            color: #2e1a5e;
+        }
+    }
+
+    .eqp-integrantes {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .eqp-integrante {
+        gap: 0.6rem;
+
+        p {
+            margin: 0;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.8;
+            color: #2e1a5e;
+        }
+
+        .img-integrante {
+            img {
+                width: 9rem;
+            }
+        }
+
+        .title-integrante {
+            font-weight: 700;
+            background: linear-gradient(90deg, #ff2d8b, #f8a000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+    .eqp {
+        padding: 100px 7% 130px;
+
+        .eqp-title {
+            h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+        }
+
+        .eqp-integrantes {
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .eqp {
+        min-height: auto;
+        padding: 90px 7% 120px;
+
+        .eqp-title {
+            margin-bottom: 25px;
+
+            h1 {
+                font-size: clamp(2.3rem, 11vw, 3.5rem);
+                letter-spacing: -1.5px;
+            }
+        }
+
+        .eqp-integrantes {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+    }
+}
