@@ -1,0 +1,213 @@
+.ip {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background: #f8f6ff;
+
+    padding: 80px 8%;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    .ip-content {
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 80px;
+    }
+
+    .ip-info {
+        flex: 1;
+        max-width: 650px;
+    }
+
+    .ip-title {
+        margin-bottom: 35px;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+
+        h1 {
+            margin: 0;
+
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: -3px;
+
+            color: #2e1a5e;
+        }
+
+        img {
+            max-width: 5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg,
+                    #ff2d8b,
+                    #f8a000);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .ip-notice {
+        h2 {
+            margin: 0 0 25px;
+
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+
+            color: #2e1a5e;
+        }
+
+        p {
+            max-width: 600px;
+
+            margin: 0 0 15px;
+
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.7;
+
+            color: #2e1a5e;
+        }
+    }
+
+    .ip-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 25px;
+        padding: 15px 30px;
+
+        border-radius: 30px;
+
+        background: linear-gradient(90deg,
+                #ff2d8b,
+                #f8a000);
+
+        color: #ffffff;
+
+        font-size: 1rem;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(255, 45, 139, 0.25);
+        }
+    }
+
+    .ip-image {
+        flex: 0 0 45%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+
+            object-fit: contain;
+
+            filter: drop-shadow(0 20px 35px rgba(46, 26, 94, 0.15));
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .ip {
+        padding: 80px 7%;
+
+        .ip-content {
+            gap: 40px;
+        }
+
+        .ip-info {
+            max-width: 550px;
+        }
+
+        .ip-image {
+            flex-basis: 40%;
+
+            img {
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .ip {
+        min-height: 100vh;
+        padding: 70px 7%;
+
+        .ip-content {
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .ip-info {
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .ip-title {
+            margin-bottom: 25px;
+
+            h1 {
+                font-size: clamp(3rem, 15vw, 4.5rem);
+            }
+        }
+
+        .ip-notice {
+            h2 {
+                font-size: clamp(2rem, 10vw, 3rem);
+            }
+
+            p {
+                max-width: 100%;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        .ip-button {
+            margin-top: 20px;
+        }
+
+        .ip-image {
+            width: 100%;
+            flex-basis: auto;
+
+            img {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    }
+}

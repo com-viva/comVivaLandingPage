@@ -1,0 +1,42 @@
+.footer {
+    width: 100%;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    background: #2e1a5e;
+
+    .footer-content {
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+
+    .item-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            margin: 0;
+            color: #ffffff;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        img {
+            width: 3rem;
+            height: auto;
+        }
+
+        .gradient-text {
+            font-weight: 600;
+
+            background: linear-gradient(90deg, #ff2d8b, #f8a000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
