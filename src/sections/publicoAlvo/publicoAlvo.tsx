@@ -1,8 +1,26 @@
+import { useState, useEffect } from "react";
 import CircularCard from "../../components/circularCard/circularCard";
 import Reveal from "../../components/reveal/reveal";
 import "./publicoAlvo.scss";
 
 export default function Publico() {
+    const [canHover, setCanHover] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+        const handleChange = () => {
+            setCanHover(mediaQuery.matches);
+        };
+
+        handleChange();
+
+        mediaQuery.addEventListener("change", handleChange);
+
+        return () => {
+            mediaQuery.removeEventListener("change", handleChange);
+        };
+    }, []);
+
     return (
         <section className="pa" id="publico">
             <div className="pa-content">
@@ -17,9 +35,18 @@ export default function Publico() {
                             Para pessoas 50+ que querem aproveitar novas experiências, descobrir atividades e
                             manter uma rotina ativa e participativa.
                         </p>
-                        <p className="pa-text-info">
-                            Posicione o mouse em cima do círculo para saber mais
-                        </p>
+
+                        {canHover
+                            ?
+                            <p className="pa-text-info">
+                                Posicione o mouse em cima do círculo para saber mais
+                            </p>
+                            :
+                            <p className="pa-text-info">
+                                Toque no círculo para saber mais
+                            </p>
+                        }
+                        
                     </div>
                 </Reveal>
                 <Reveal>

@@ -11,7 +11,7 @@
         linear-gradient(to bottom, #f8a000, #8a2be2, #ff2d8b) border-box;
 
     border: 5px solid transparent;
-    ;
+    box-sizing: border-box;
 
     .card-title {
         margin: 0 0 15px;
@@ -30,15 +30,33 @@
         margin: 0;
         line-height: 1.6;
         color: #2e1a5e;
+        overflow-wrap: break-word;
     }
 }
 
 .card-medium {
-    width: 350px;
-    min-height: 200px;
+    width: 100%;
+    max-width: 350px;
+    min-height: 250px;
 }
 
 .card-large {
     width: 100%;
     min-height: 300px;
+}
+
+@media (max-width: 700px) {
+    .card {
+        padding: 24px 20px;
+
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+    }
+
+    .card-medium,
+    .card-large {
+        min-height: 190px;
+    }
 }
