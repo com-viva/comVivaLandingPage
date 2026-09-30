@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    min-height: 80px;
 
     z-index: 1000;
 
@@ -15,18 +15,72 @@
 
     .header-content {
         width: 100%;
-        height: 100%;
+        min-height: 80px;
         margin: 0 auto;
         padding: 0 2%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 1.5rem;
     }
 
     .header-logo {
+        flex-shrink: 0;
+
         img {
             width: 4.5rem;
+            height: auto;
+            display: block;
         }
+    }
+
+    .header-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 0 10px;
+
+        background: transparent;
+        border: 1px solid rgba(46, 26, 94, 0.15);
+        border-radius: 12px;
+
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background: #2e1a5e;
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
+    }
+
+    &.menu-open {
+        .header-toggle {
+            span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+        }
+    }
+
+    .header-menu {
+        display: flex;
+        align-items: center;
+        gap: 35px;
     }
 
     .header-nav {
@@ -36,6 +90,7 @@
 
         a {
             position: relative;
+            white-space: nowrap;
 
             text-decoration: none;
             font-size: 1rem;
@@ -75,9 +130,11 @@
     }
 
     .header-button {
+        flex-shrink: 0;
         padding: 0.8rem 1rem;
         border-radius: 30px;
         text-decoration: none;
+        white-space: nowrap;
         background: linear-gradient(90deg,
                 #ff2d8b,
                 #f8a000);
@@ -93,6 +150,149 @@
 
         &::after {
             display: none;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .header {
+        .header-content {
+            padding: 0 4%;
+            gap: 1rem;
+        }
+
+        .header-logo {
+            img {
+                width: 3.75rem;
+            }
+        }
+
+        .header-menu {
+            gap: 24px;
+        }
+
+        .header-nav {
+            gap: 20px;
+
+            a {
+                font-size: 0.9rem;
+            }
+        }
+
+        .header-button {
+            padding: 0.7rem 0.9rem;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        .header-content {
+            padding: 0 5%;
+        }
+
+        .header-toggle {
+            display: flex;
+        }
+
+        .header-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+
+            max-height: 0;
+            padding: 0 5%;
+            overflow: hidden;
+            visibility: hidden;
+
+            background: rgba(248, 246, 255, 0.98);
+            border-bottom: 1px solid rgba(46, 26, 94, 0.08);
+
+            transition:
+                max-height 0.35s ease,
+                padding 0.35s ease,
+                visibility 0.35s ease;
+        }
+
+        &.menu-open .header-menu {
+            max-height: calc(100vh - 80px);
+            padding: 16px 5% 24px;
+            overflow-y: auto;
+            visibility: visible;
+        }
+
+        .header-nav {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 4px;
+
+            a {
+                padding: 14px 12px;
+                border-radius: 12px;
+                font-size: 1rem;
+
+                &::after {
+                    display: none;
+                }
+
+                &.active {
+                    background: rgba(255, 45, 139, 0.08);
+                }
+            }
+        }
+
+        .header-button {
+            text-align: center;
+            padding: 0.9rem 1rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 900px) and (max-height: 560px) {
+    .header {
+        .header-nav {
+            gap: 2px;
+
+            a {
+                padding: 9px 12px;
+            }
+        }
+
+        .header-menu {
+            gap: 8px;
+        }
+
+        .header-button {
+            padding: 0.7rem 1rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        .header-content {
+            padding: 0 4%;
+        }
+
+        .header-logo {
+            img {
+                width: 3.25rem;
+            }
+        }
+
+        .header-menu {
+            padding: 0 4%;
+        }
+
+        &.menu-open .header-menu {
+            padding: 12px 4% 20px;
         }
     }
 }

@@ -10,7 +10,6 @@
     box-sizing: border-box;
 
     .gvr-content {
-        margin-top: 5rem;
         position: relative;
         z-index: 2;
         width: 100%;
@@ -33,5 +32,33 @@
 
     .gvr-card {
         width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .gvr {
+        padding: 100px 6% 130px;
+
+        .gvr-title {
+            h1 {
+                font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .gvr {
+        min-height: auto;
+        padding: 80px 6% 100px;
+
+        .gvr-title {
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+                letter-spacing: -1px;
+            }
+        }
     }
 }

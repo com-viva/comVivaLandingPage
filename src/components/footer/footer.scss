@@ -40,3 +40,28 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1rem 0.8rem;
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .item-content {
+            width: 100%;
+
+            p {
+                font-size: 0.8rem;
+            }
+
+            img {
+                width: 2.5rem;
+            }
+        }
+    }
+}

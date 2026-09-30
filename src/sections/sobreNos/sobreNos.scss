@@ -21,7 +21,6 @@
     }
 
     .sn-content {
-        margin-top: 5rem;
         position: relative;
         z-index: 2;
         width: 100%;
@@ -80,32 +79,35 @@
     .sn-cards {
         display: flex;
         align-items: stretch;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px;
         width: 100%;
+
+        > .card {
+            flex: 1 1 240px;
+            min-width: 0;
+        }
     }
 }
 
 @media (max-width: 900px) {
     .sn {
-        padding: 100px 7% 130px;
+        padding: 100px 6% 130px;
 
         .sn-title {
             h1 {
-                font-size: clamp(2.5rem, 6vw, 4rem);
+                font-size: clamp(2.2rem, 5.5vw, 3.5rem);
             }
         }
 
         .sn-text {
             max-width: 100%;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
 
             p {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
             }
-        }
-
-        .sn-cards {
-            gap: 20px;
         }
     }
 }
@@ -113,19 +115,19 @@
 @media (max-width: 700px) {
     .sn {
         min-height: auto;
-        padding: 90px 7% 120px;
+        padding: 80px 6% 100px;
 
         .sn-title {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
 
             h1 {
-                font-size: clamp(2.3rem, 11vw, 3.5rem);
-                letter-spacing: -1.5px;
+                font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+                letter-spacing: -1px;
             }
         }
 
         .sn-text {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
 
             p {
                 font-size: 1rem;
@@ -136,7 +138,11 @@
         .sn-cards {
             flex-direction: column;
             align-items: stretch;
-            gap: 20px;
+            gap: 40px;
+
+            > .card {
+                flex: 0 0 auto;
+            }
         }
     }
 }
