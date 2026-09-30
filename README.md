@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# comViva
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page do projeto **comViva**, uma solução digital pensada para incentivar a participação de pessoas com 50 anos ou mais em eventos e atividades de interesse.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Sobre
 
-## React Compiler
+O projeto parte da necessidade de oferecer uma experiência digital mais acessível e intuitiva para o público 50+, considerando aspectos como facilidade de navegação, clareza das informações e autonomia do usuário.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Esta landing page funciona como a apresentação institucional do projeto, reunindo sua proposta, contexto, público-alvo, equipe e princípios de governança em uma única página.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Navegação por seções:** Acesso rápido às partes principais da página;
+- **Menu responsivo:** Adaptado para dispositivos móveis;
+- **Destaque de seção:** Indicação da seção atualmente visualizada;
+- **Animações de entrada:** Efeitos visuais durante a rolagem (scroll);
+- **Cards informativos:** Exposição clara e organizada dos conteúdos;
+- **Cards interativos:** Efeito de rotação ao interagir;
+- **Layout adaptativo:** Compatível com desktop, tablet e smartphone;
+- **Página institucional:** Espaço dedicado à apresentação completa do projeto.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tecnologias
 
-```
+| Tecnologia | Utilização |
+| :--- | :--- |
+| **React** | Construção da interface de usuário |
+| **TypeScript** | Tipagem estática e desenvolvimento seguro dos componentes |
+| **SCSS** | Estilização avançada e responsividade |
+| **React Router** | Gerenciamento de rotas e navegação entre páginas |
+| **Vite** | Ambiente de desenvolvimento rápido e ferramentas de build |
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 👥 Equipe
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Integrante | Responsabilidade |
+| :--- | :--- |
+| **Alícia** | Desenvolvimento e Product Lead |
+| **Anderson** | Desenvolvimento, Marketing e Comunicação |
+| **Carol** | Desenvolvimento e Project Lead |
+| **Flávia** | Desenvolvimento e Product Design |
 
-```
+---
+
+## 🎓 Contexto Acadêmico
+
+O **comViva** é um projeto acadêmico desenvolvido a partir de uma proposta de impacto social, buscando utilizar a tecnologia como ferramenta para incentivar a participação e o acesso a atividades de interesse do público 50+.
+
+A proposta considera aspectos de acessibilidade, experiência do usuário e facilidade de uso, buscando construir uma solução adequada às características do público definido para o projeto.
+
+Este repositório contém a landing page institucional, responsável por apresentar a proposta, os objetivos, o público-alvo, a equipe e as diretrizes de governança do projeto.
+
+---
+
+## 🚧 Status do Projeto
+
+🚧 **Em desenvolvimento**
